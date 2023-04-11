@@ -56,4 +56,15 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    //<<<<<<<<<<<<<<<<<<<<<<<CHECK TOTAL ORDER COST>>>>>>>>>>>>>>>>
+    @Test
+    public void after_selecting_menu_items_total_order_cost_should_be_displayed(){
+        List<String> selectedItemsFromMenu = new ArrayList<>();
+        selectedItemsFromMenu.add("Sweet corn soup");
+        selectedItemsFromMenu.add("Vegetable lasagne");
+        int totalOrderCost = restaurant.getTotalOrderCost(selectedItemsFromMenu);
+        assertEquals(388,totalOrderCost);
+    }
+    //<<<<<<<<<<<<<<<<<<<<<<<CHECK TOTAL ORDER COST>>>>>>>>>>>>>>>>
 }
