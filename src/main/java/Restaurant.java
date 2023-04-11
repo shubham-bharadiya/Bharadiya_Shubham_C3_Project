@@ -60,4 +60,16 @@ public class Restaurant {
     public String getName() {
         return name;
     }
+    public int getTotalOrderCost(List<String> selectedItemsFromMenu) {
+        int orderCost = 0;
+        for(String itemName :selectedItemsFromMenu){
+            for(Item item : menu){
+                if(item.getName().equals(itemName)){
+                    orderCost = orderCost + item.getPrice();
+                    break;
+                }
+            }
+        }
+        return orderCost;
+    }
 }
